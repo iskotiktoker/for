@@ -1,0 +1,697 @@
+/* Основные стили для всего сайта */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary: #27ae60;
+    --secondary: #2ecc71;
+    --purchase: #e74c3c;
+    --sale: #3498db;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --info: #3498db;
+    --light: #f8f9fa;
+    --dark: #2c3e50;
+    --gray: #7f8c8d;
+    --border: #bdc3c7;
+    --card-bg: #ecf0f1;
+}
+
+body {
+    background: linear-gradient(135deg, #1d976c 0%, #93f9b9 100%);
+    color: var(--dark);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стили для header */
+header {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo i {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.logo h1 {
+    font-size: 2rem;
+    color: var(--dark);
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-card {
+    background: var(--light);
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 160px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card.purchase h3 {
+    color: var(--purchase);
+}
+
+.stat-card.sale h3 {
+    color: var(--sale);
+}
+
+.stat-card.profit h3 {
+    color: var(--primary);
+}
+
+.stat-card h3 {
+    font-size: 1.8rem;
+}
+
+.stat-card p {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* Основной контент */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+@media (max-width: 1100px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Сайдбар */
+.sidebar {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+.transaction-form h2 {
+    margin-bottom: 20px;
+    color: var(--dark);
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+}
+
+/* Формы */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.radio-option input {
+    margin-right: 5px;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-purchase {
+    background-color: var(--purchase);
+}
+
+.btn-sale {
+    background-color: var(--sale);
+}
+
+/* Контент */
+.content {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Вкладки */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background-color: var(--light);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.tab-btn.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    background-color: #e9ecef;
+}
+
+/* Фильтры */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+    background-color: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.filter-btn.active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.filter-btn:hover:not(.active) {
+    background-color: #e9ecef;
+}
+
+/* Заголовки */
+.transactions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.transactions-header h2 {
+    color: var(--dark);
+    font-size: 1.5rem;
+}
+
+.sort-select {
+    padding: 8px 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: white;
+    font-size: 0.9rem;
+}
+
+/* Списки транзакций */
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.transaction-item {
+    background-color: var(--light);
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 5px solid var(--primary);
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transaction-item.purchase {
+    border-left-color: var(--purchase);
+}
+
+.transaction-item.sale {
+    border-left-color: var(--sale);
+}
+
+.transaction-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-info {
+    flex: 1;
+}
+
+.transaction-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+.transaction-meta {
+    display: flex;
+    gap: 15px;
+    color: var(--gray);
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.transaction-amount {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.transaction-amount.purchase {
+    color: var(--purchase);
+}
+
+.transaction-amount.sale {
+    color: var(--sale);
+}
+
+.transaction-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--gray);
+    transition: all 0.3s;
+}
+
+.action-btn:hover {
+    color: var(--primary);
+}
+
+/* Пустые состояния */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--gray);
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--border);
+}
+
+/* Календарь */
+.calendar-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header h2 {
+    color: var(--dark);
+    font-size: 1.5rem;
+}
+
+.calendar-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day {
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--light);
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-day.header {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    min-height: auto;
+}
+
+.calendar-day.today {
+    background-color: rgba(39, 174, 96, 0.2);
+    border: 2px solid var(--primary);
+}
+
+.calendar-day.has-transactions {
+    background-color: rgba(52, 152, 219, 0.2);
+}
+
+.day-number {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.day-transactions {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.7rem;
+}
+
+.transaction-indicator {
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+}
+
+.transaction-indicator.purchase {
+    background-color: var(--purchase);
+}
+
+.transaction-indicator.sale {
+    background-color: var(--sale);
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Уведомления */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateX(150%);
+    transition: transform 0.5s;
+    z-index: 1000;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.notification.success i {
+    color: var(--primary);
+}
+
+.notification.error i {
+    color: var(--warning);
+}
+
+/* Бейджи */
+.category-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.unit-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: var(--warning);
+    color: white;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Контент вкладок */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Склад */
+.inventory-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.inventory-item {
+    background-color: var(--light);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.inventory-item h4 {
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+.inventory-amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.inventory-unit {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* Стили для страниц аутентификации */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.auth-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-form .logo {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark);
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--gray);
+}
+
+.auth-link a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.message.success {
+    background-color: rgba(39, 174, 96, 0.1);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.message.error {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .stats {
+        justify-content: center;
+    }
+    
+    .stat-card {
+        min-width: 120px;
+    }
+    
+    .filters {
+        justify-content: center;
+    }
+    
+    .transactions-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .auth-form {
+        padding: 20px;
+    }
+}
+
+/* Утилиты */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
